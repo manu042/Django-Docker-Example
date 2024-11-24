@@ -1,0 +1,19 @@
+version: "3.4"
+
+
+services:
+  MyDjangoSite:
+    image: my-django-project
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      - DJANGO_SETTINGS_MODULE=MyDjangoProject.settings
+      - DJANGO_SUPERUSER_USERNAME=admin
+      - DJANGO_SUPERUSER_EMAIL=admin@example.com
+      - DJANGO_SUPERUSER_PASSWORD=adminpassword
+      - DJANGO_COLLECT_STATIC=1
+    restart: unless-stopped
+    container_name: my-django-project

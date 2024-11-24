@@ -1,0 +1,14 @@
+# .dockerignore file
+.vscode
+.env
+*.log
+*.sqlite3
+
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+/venv
