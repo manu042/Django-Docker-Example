@@ -29,7 +29,12 @@ RUN chmod +x entrypoint.sh && \
 
 # Copy project files
 COPY MyDjangoSite .
-RUN chown -R appuser:appuser /app
+
+
+# Create directories with correct permissions
+RUN mkdir -p /app/staticfiles && \
+    chown -R appuser:appuser /app && \
+    chmod -R 755 /app/staticfiles
 
 
 # Switch to non-root user
