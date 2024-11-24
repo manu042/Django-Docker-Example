@@ -1,5 +1,4 @@
 # .dockerignore file
-.vscode
 .env
 *.log
 *.sqlite3
